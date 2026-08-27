@@ -84,7 +84,7 @@ include __DIR__ . '/includes/header.php';
       <div>
         <h2 class="text-accent mb-3" style="font-size: 1.5rem;">👥 Usuarios y Cuentas del Sistema</h2>
         <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
-          Control centralizado de administradores, barberos y permisos en Brotherhood Barbershop.
+          Control centralizado de administradores, barberos y permisos.
         </p>
 
         <div class="table-responsive">
@@ -186,7 +186,7 @@ include __DIR__ . '/includes/header.php';
           <!-- FORMULARIO CREAR USUARIO / ADMIN / BARBERO -->
           <h2 class="text-accent mb-3" style="font-size: 1.5rem;">➕ Crear Nueva Cuenta de Usuario</h2>
           <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
-            Registra una nueva cuenta autorizada para Brotherhood Barbershop.
+            Registra una nueva cuenta autorizada.
           </p>
 
           <form action="actions/saas_create_admin.php" method="POST" class="glass-panel flex flex-col gap-3" style="padding: 1.75rem; margin:0;">
@@ -231,31 +231,7 @@ include __DIR__ . '/includes/header.php';
       Registro detallado de acciones del sistema y volumen operativo en Brotherhood Barbershop.
     </p>
 
-    <div class="grid-cards mb-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-      <div class="glass-panel text-center" style="padding: 2rem;">
-        <span style="font-size: 3rem;">💈</span>
-        <h3 class="text-accent mt-2" style="font-size: 2.2rem; margin:0;">1</h3>
-        <p style="color: var(--text-secondary); margin-top:4px;">Barbería Activa (Brotherhood)</p>
-      </div>
 
-      <div class="glass-panel text-center" style="padding: 2rem;">
-        <span style="font-size: 3rem;">👥</span>
-        <h3 class="text-accent mt-2" style="font-size: 2.2rem; margin:0;"><?php echo count($all_users); ?></h3>
-        <p style="color: var(--text-secondary); margin-top:4px;">Cuentas Registradas en Total</p>
-      </div>
-
-      <div class="glass-panel text-center" style="padding: 2rem;">
-        <span style="font-size: 3rem;">📅</span>
-        <h3 class="text-accent mt-2" style="font-size: 2.2rem; margin:0;"><?php echo $total_appts; ?></h3>
-        <p style="color: var(--text-secondary); margin-top:4px;">Turnos Totales Gestionados</p>
-      </div>
-
-      <div class="glass-panel text-center" style="padding: 2rem;">
-        <span style="font-size: 3rem;">💰</span>
-        <h3 class="text-success mt-2" style="font-size: 2.2rem; margin:0;">$<?php echo number_format($global_revenue, 2); ?></h3>
-        <p style="color: var(--text-secondary); margin-top:4px;">Volumen Financiero Registrado</p>
-      </div>
-    </div>
 
     <!-- TABLA DE LOGS DE AUDITORÍA -->
     <h3 class="text-accent mb-3" style="font-size: 1.3rem;">📋 Historial de Auditoría y Seguridad</h3>
