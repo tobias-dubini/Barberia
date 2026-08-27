@@ -1,0 +1,8 @@
+# Configuración y archivos temporales
+.migrated.lock
+.env
+.idea/
+.vscode/
+*.log
+Thumbs.db
+.DS_Store
