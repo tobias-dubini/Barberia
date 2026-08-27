@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
+$is_panel_view = true;
 
 $user = require_super_admin();
 
@@ -72,10 +73,10 @@ include __DIR__ . '/includes/header.php';
 <div class="panel-top-nav-bar mb-6 flex justify-between items-center flex-wrap gap-4" style="background: rgba(212, 175, 55, 0.08); border-bottom: 2px solid var(--accent-primary); padding: 1rem 1.5rem; border-radius: 12px;">
   <div>
     <h1 style="font-size: 1.8rem; margin:0; color: var(--accent-primary); font-family: var(--font-heading);" class="flex items-center gap-2">
-      ⚡ Panel de Control Super Admin — Brotherhood Barbershop
+      ⚡ Panel de Control Super Admin
     </h1>
     <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 2px 0 0 0;">
-      Administración centralizada del sistema: Cuentas de usuario, accesos de staff, métricas globales y auditoría de seguridad
+      Administración centralizada del sistema.
     </p>
   </div>
 
@@ -270,7 +271,7 @@ include __DIR__ . '/includes/header.php';
 
         <!-- FILTRO POR ACCIÓN DE SEGURIDAD -->
         <div class="flex items-center gap-2">
-          <label for="filter_action" style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 600;">Filtrar Acción:</label>
+          <label for="filter_action" style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 600;">Filtrar:</label>
           <select id="filter_action" name="filter_action" class="input-field" style="min-width: 220px; padding: 0.45rem 0.8rem; font-size: 0.84rem;" onchange="this.form.submit()">
             <option value="">🔒 Todos los Registros de Seguridad</option>
             <option value="create_user" <?php echo $filter_action === 'create_user' ? 'selected' : ''; ?>>➕ Creación de Cuentas (CREATE_USER)</option>

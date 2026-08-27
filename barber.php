@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
+$is_panel_view = true;
 $user = require_login();
 
 $shop_id = $user['shop_id'];
