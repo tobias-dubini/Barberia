@@ -59,28 +59,7 @@ include __DIR__ . '/includes/header.php';
   </nav>
 </div>
 
-<!-- TARJETAS DE MÉTRICAS RÁPIDAS (KPI) -->
-<div class="kpi-grid mb-6">
-  <div class="kpi-card kpi-gold kpi-featured">
-    <span class="kpi-label">Barbería Principal</span>
-    <span class="kpi-value" style="font-size: 1.35rem;">Brotherhood Barbershop</span>
-  </div>
 
-  <div class="kpi-card kpi-blue">
-    <span class="kpi-label">Admins de Barbería</span>
-    <span class="kpi-value"><?php echo $total_admins; ?></span>
-  </div>
-
-  <div class="kpi-card kpi-success">
-    <span class="kpi-label">Barberos Staff Registrados</span>
-    <span class="kpi-value"><?php echo $total_barbers; ?></span>
-  </div>
-
-  <div class="kpi-card kpi-warning">
-    <span class="kpi-label">Recaudación Bruta Consolidada</span>
-    <span class="kpi-value">$<?php echo number_format($global_revenue, 2); ?></span>
-  </div>
-</div>
 
 <div class="glass-panel" style="margin-bottom: 2.5rem;">
 
