@@ -35,7 +35,14 @@ $all_users = $stmtUsers->fetchAll();
 $filter_action = strtolower(trim($_GET['filter_action'] ?? ''));
 $filter_user   = (int)($_GET['filter_user'] ?? 0);
 
-$where_clauses = ["LOWER(entity_type) NOT IN ('appointment', 'turno', 'service', 'catalog', 'caja')"];
+$where_clauses = [
+    "LOWER(entity_type) NOT IN ('appointment', 'turno', 'service', 'servicio', 'catalog', 'catalogo', 'producto', 'caja', 'sale', 'venta')",
+    "LOWER(entity_type) NOT LIKE '%servicio%'",
+    "LOWER(entity_type) NOT LIKE '%catalogo%'",
+    "LOWER(details) NOT LIKE '%servicio%'",
+    "LOWER(details) NOT LIKE '%catálogo%'",
+    "LOWER(details) NOT LIKE '%catalogo%'"
+];
 $params = [];
 
 if (!empty($filter_action)) {
@@ -295,17 +302,17 @@ include __DIR__ . '/includes/header.php';
       </form>
     </div>
 
-    <!-- TABLA DE LOGS DE AUDITORÍA -->
-    <div class="table-responsive">
-      <table>
-        <thead>
+    <!-- TABLA DE LOGS DE AUDITORÍA CON SCROLL INTERNO Y CABECERA FIJA -->
+    <div class="table-responsive" style="max-height: 480px; overflow-y: auto; border: 1px solid var(--glass-border); border-radius: 12px; background: rgba(7, 9, 12, 0.5);">
+      <table style="width: 100%; border-collapse: separate; border-spacing: 0;">
+        <thead style="position: sticky; top: 0; z-index: 10; background: #0d1117; box-shadow: 0 2px 8px rgba(0,0,0,0.6);">
           <tr>
-            <th style="width: 140px;">Fecha y Hora</th>
-            <th style="width: 180px;">Administrador / Usuario</th>
-            <th style="width: 170px;">Acción de Seguridad</th>
-            <th style="width: 120px;">Tipo Entidad</th>
-            <th>Detalles del Cambio</th>
-            <th style="width: 120px;">Dirección IP</th>
+            <th style="width: 140px; background: #0d1117;">Fecha y Hora</th>
+            <th style="width: 180px; background: #0d1117;">Administrador / Usuario</th>
+            <th style="width: 170px; background: #0d1117;">Acción de Seguridad</th>
+            <th style="width: 120px; background: #0d1117;">Tipo Entidad</th>
+            <th style="background: #0d1117;">Detalles del Cambio</th>
+            <th style="width: 120px; background: #0d1117;">Dirección IP</th>
           </tr>
         </thead>
         <tbody>
