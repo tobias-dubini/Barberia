@@ -575,7 +575,7 @@ elseif ($subtab === 'gastos'):
 // SUB-TAB 3: PAGO A BARBEROS Y RECIBOS IMPRIMIBLES
 // =========================================================================
 elseif ($subtab === 'barberos_pago'):
-    $stmtBarbers = $pdo->prepare("SELECT id, name, email, photo FROM users WHERE shop_id = ? AND role IN ('barber', 'owner')");
+    $stmtBarbers = $pdo->prepare("SELECT id, name, email, photo FROM users WHERE shop_id = ? AND role IN ('barber', 'barbero', 'owner', 'admin_barberia') ORDER BY name ASC");
     $stmtBarbers->execute([$shop_id]);
     $barbers = $stmtBarbers->fetchAll();
 
