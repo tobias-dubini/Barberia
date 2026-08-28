@@ -918,98 +918,98 @@ elseif ($subtab === 'exportar' || $subtab === 'importador'):
   <h3 class="mb-2 text-accent">📤 Exportar Reportes Financieros a Excel / CSV</h3>
   <p style="color:var(--text-secondary);" class="mb-6">Descarga informes oficiales en formato Excel (.CSV compatible con Microsoft Excel y Hojas de Cálculo) con codificación UTF-8 y montos formateados.</p>
 
-  <div class="grid-cards mb-6" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+  <div class="grid-cards mb-6" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; align-items: stretch;">
     
     <!-- TARJETA 1: REPORTES DE GASTOS -->
-    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid var(--danger);">
+    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid var(--danger); height: 100%;">
       <div>
         <div class="flex items-center gap-2 mb-2">
           <span style="font-size: 1.8rem;">💸</span>
           <h4 style="margin:0; font-size:1.15rem; color:var(--text-primary);">Reporte de Gastos</h4>
         </div>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4;">
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4; min-height: 48px;">
           Exporta el detalle de todos los egresos registrados, categorizados con sus métodos de pago.
         </p>
       </div>
 
       <form action="actions/export_finance_reports.php" method="GET" class="flex flex-col gap-3">
         <input type="hidden" name="type" value="gastos">
-        <div class="input-group">
+        <div class="input-group" style="margin-bottom: 0;">
           <label class="input-label">Seleccionar Mes:</label>
           <input type="month" name="month" class="input-field" value="<?php echo $exp_month; ?>" required style="padding:6px 10px;">
         </div>
-        <button type="submit" class="btn btn-danger w-full" style="font-weight:bold;">
-          📊 Descargar Excel de Gastos
+        <button type="submit" class="btn btn-danger w-full" style="font-weight:bold; height: 42px;">
+          📊 Descargar Excel Gastos
         </button>
       </form>
     </div>
 
     <!-- TARJETA 2: PAGOS Y COMISIONES A BARBEROS -->
-    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid #3b82f6;">
+    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid #3b82f6; height: 100%;">
       <div>
         <div class="flex items-center gap-2 mb-2">
           <span style="font-size: 1.8rem;">💈</span>
           <h4 style="margin:0; font-size:1.15rem; color:var(--text-primary);">Pagos a Barberos</h4>
         </div>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4;">
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4; min-height: 48px;">
           Exporta las liquidaciones, adelantos, bonificaciones y comprobantes de pago de los barberos.
         </p>
       </div>
 
       <form action="actions/export_finance_reports.php" method="GET" class="flex flex-col gap-3">
         <input type="hidden" name="type" value="barberos">
-        <div class="input-group">
+        <div class="input-group" style="margin-bottom: 0;">
           <label class="input-label">Seleccionar Mes:</label>
           <input type="month" name="month" class="input-field" value="<?php echo $exp_month; ?>" required style="padding:6px 10px;">
         </div>
-        <button type="submit" class="btn btn-primary w-full" style="font-weight:bold;">
-          📊 Descargar Excel de Pagos
+        <button type="submit" class="btn btn-primary w-full" style="font-weight:bold; height: 42px;">
+          📊 Descargar Excel Pagos
         </button>
       </form>
     </div>
 
     <!-- TARJETA 3: HISTORIAL DE TURNOS Y ATENCIONES -->
-    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid var(--success);">
+    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid var(--success); height: 100%;">
       <div>
         <div class="flex items-center gap-2 mb-2">
           <span style="font-size: 1.8rem;">✂️</span>
           <h4 style="margin:0; font-size:1.15rem; color:var(--text-primary);">Historial de Turnos</h4>
         </div>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4;">
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4; min-height: 48px;">
           Exporta el registro completo de atenciones a clientes, barberos asignados y valores cobrados.
         </p>
       </div>
 
       <form action="actions/export_finance_reports.php" method="GET" class="flex flex-col gap-3">
         <input type="hidden" name="type" value="turnos">
-        <div class="input-group">
+        <div class="input-group" style="margin-bottom: 0;">
           <label class="input-label">Seleccionar Mes:</label>
           <input type="month" name="month" class="input-field" value="<?php echo $exp_month; ?>" required style="padding:6px 10px;">
         </div>
-        <button type="submit" class="btn btn-success w-full" style="font-weight:bold;">
-          📊 Descargar Excel de Turnos
+        <button type="submit" class="btn btn-success w-full" style="font-weight:bold; height: 42px;">
+          📊 Descargar Excel Turnos
         </button>
       </form>
     </div>
 
     <!-- TARJETA 4: CONSOLIDADO DE CIERRES DE CAJA -->
-    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid var(--accent-primary);">
+    <div class="glass-panel flex flex-col justify-between" style="margin:0; border-top: 4px solid var(--accent-primary); height: 100%;">
       <div>
         <div class="flex items-center gap-2 mb-2">
           <span style="font-size: 1.8rem;">🔒</span>
           <h4 style="margin:0; font-size:1.15rem; color:var(--text-primary);">Cierres de Caja</h4>
         </div>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4;">
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.4; min-height: 48px;">
           Exporta la planilla diaria consolidada de cierres de caja con neto para la barbería.
         </p>
       </div>
 
       <form action="actions/export_closure_excel.php" method="GET" class="flex flex-col gap-3">
-        <div class="input-group">
+        <div class="input-group" style="margin-bottom: 0;">
           <label class="input-label">Seleccionar Mes:</label>
           <input type="month" name="month" class="input-field" value="<?php echo $exp_month; ?>" required style="padding:6px 10px;">
         </div>
-        <button type="submit" class="btn btn-outline w-full" style="font-weight:bold; border-color:var(--accent-primary); color:var(--accent-primary);">
+        <button type="submit" class="btn btn-warning w-full" style="font-weight:bold; height: 42px;">
           📊 Descargar Excel Cierres
         </button>
       </form>
