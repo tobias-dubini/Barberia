@@ -182,13 +182,28 @@ $total_ingresos_periodo = $total_efectivo_periodo + $total_transferencia_periodo
 $ganancia_neta_periodo = $total_ingresos_periodo - $total_comisiones_periodo - $total_gastos_periodo;
 ?>
 
-<div class="mb-6">
-  <h2 class="text-accent" style="font-size:1.8rem; font-weight:800;">📈 Panel de Análisis por Períodos</h2>
-  <p style="color:var(--text-secondary);">Filtra por Día, Semana, Quincena o Mes para consultar Ingresos, Venta de Productos (Cremas, Ceras, Shampoo) y Comisiones de Barberos.</p>
+<div class="flex justify-between items-end flex-wrap gap-3 mb-4">
+  <div>
+    <h2 class="text-accent mb-1" style="font-size:1.6rem; font-weight:800; margin:0;">
+      📈 Panel de Análisis por Períodos
+    </h2>
+    <p style="color:var(--text-secondary); font-size:0.88rem; margin:0;">
+      Consultá Ingresos, Venta de Productos y Comisiones por Día, Semana, Quincena o Mes.
+    </p>
+  </div>
+
+  <div class="flex items-center gap-2 flex-wrap">
+    <span class="status-badge status-badge-active" style="font-size:0.82rem; padding:0.35rem 0.85rem; border-radius:999px;">
+      📍 <?php echo htmlspecialchars($period_label); ?>
+    </span>
+    <span style="color:var(--text-secondary); font-size:0.8rem; background: rgba(201,167,82,0.08); padding:0.35rem 0.75rem; border-radius:999px; border:1px solid rgba(201,167,82,0.25);">
+      📊 <strong><?php echo count($all_period_records); ?></strong> registros (<?php echo $servicios_unidades; ?> Servicios + <?php echo $productos_unidades; ?> Productos)
+    </span>
+  </div>
 </div>
 
 <!-- FORMULARIO DE FILTRO DE PERÍODO -->
-<div class="glass-panel mb-6" style="border-left: 4px solid var(--accent-primary); padding: 1.5rem 2rem;">
+<div class="glass-panel mb-6" style="border-left: 4px solid var(--accent-primary); padding: 1.25rem 1.75rem;">
   <form method="GET" action="owner.php" class="flex flex-wrap items-end gap-4" style="margin:0;">
     <input type="hidden" name="tab" value="<?php echo htmlspecialchars($_GET['tab'] ?? 'periodos'); ?>">
     <?php if (isset($_GET['subtab'])): ?>
@@ -244,17 +259,6 @@ $ganancia_neta_periodo = $total_ingresos_periodo - $total_comisiones_periodo - $
       <button type="submit" class="btn btn-primary" style="padding: 0 1.4rem; display: inline-flex; align-items: center; justify-content: center; height: 44px; font-weight: 700; white-space: nowrap; margin:0;">🔍 Consultar Período</button>
     </div>
   </form>
-</div>
-
-<!-- BARRA SEPARADA DE ESTADO DE PERÍODO -->
-<div class="flex items-center justify-between flex-wrap gap-2 mb-8" style="padding: 0.85rem 1.25rem; background: rgba(7,9,12,0.7); border: 1px solid var(--glass-border); border-radius: 12px;">
-  <span class="status-badge status-badge-active" style="font-size:0.95rem; padding:0.4rem 1rem;">
-    📍 <?php echo htmlspecialchars($period_label); ?>
-  </span>
-
-  <small style="color:var(--text-secondary);">
-    Registros analizados: <strong><?php echo count($all_period_records); ?></strong> (<?php echo $servicios_unidades; ?> Servicios + <?php echo $productos_unidades; ?> Ventas de Productos)
-  </small>
 </div>
 
 <!-- TARJETAS DE MÉTRICAS KPI DEL PERÍODO -->
