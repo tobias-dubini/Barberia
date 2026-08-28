@@ -18,6 +18,10 @@ try {
     $migrationLockFile = __DIR__ . '/.migrated.lock';
     if (!file_exists($migrationLockFile)) {
         try {
+            $pdo->exec("UPDATE shops SET name = 'Brotherhood Barbershop'");
+        } catch (Exception $ex) {}
+
+        try {
             $checkCol = $pdo->query("SHOW COLUMNS FROM appointments LIKE 'client_phone'");
             if ($checkCol->rowCount() === 0) {
                 $pdo->exec("ALTER TABLE appointments ADD COLUMN client_phone VARCHAR(50) NULL AFTER client_name");

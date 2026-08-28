@@ -88,7 +88,7 @@ include __DIR__ . '/includes/header.php';
       </form>
 
       <div class="mt-4 pt-3 text-center" style="border-top: 1px dashed rgba(255,255,255,0.12); font-size: 0.78rem; color: var(--text-secondary);">
-        <span>🔒 Acceso exclusivo para personal autorizado. Cuentas creadas únicamente por el Super Admin.</span>
+        <span>🔒 Acceso exclusivo para personal autorizado.</span>
       </div>
 
     </div>
