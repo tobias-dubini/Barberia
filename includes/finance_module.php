@@ -962,7 +962,7 @@ elseif ($subtab === 'exportar' || $subtab === 'importador'):
           <label class="input-label">Seleccionar Mes:</label>
           <input type="month" name="month" class="input-field" value="<?php echo $exp_month; ?>" required style="padding:6px 10px;">
         </div>
-        <button type="submit" class="btn btn-primary w-full" style="font-weight:bold; height: 42px;">
+        <button type="submit" class="btn w-full" style="font-weight:bold; height: 42px; background:#3b82f6; color:#ffffff; border:1px solid #3b82f6;">
           📊 Descargar Excel Pagos
         </button>
       </form>
@@ -1009,7 +1009,7 @@ elseif ($subtab === 'exportar' || $subtab === 'importador'):
           <label class="input-label">Seleccionar Mes:</label>
           <input type="month" name="month" class="input-field" value="<?php echo $exp_month; ?>" required style="padding:6px 10px;">
         </div>
-        <button type="submit" class="btn btn-warning w-full" style="font-weight:bold; height: 42px;">
+        <button type="submit" class="btn w-full" style="font-weight:bold; height: 42px; background:linear-gradient(135deg, #c9a752 0%, #e6c875 100%); color:#07090c; border:1px solid #e6c875;">
           📊 Descargar Excel Cierres
         </button>
       </form>
